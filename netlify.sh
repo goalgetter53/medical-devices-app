@@ -8,8 +8,8 @@ echo "Current directory:"
 pwd
 ls -la
 
-echo "Moving to client directory..."
-cd client
+echo "Moving to Flutter app directory..."
+cd client/medical_devices_app
 
 echo "Installing Flutter..."
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable "$HOME/flutter"
@@ -28,5 +28,5 @@ echo "Building web..."
 flutter build web --release
 
 echo "Moving build output to expected location..."
-mkdir -p ../build
-mv build/web ../build/ 
+mkdir -p ../../build
+mv build/web ../../build/ 

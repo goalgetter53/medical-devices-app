@@ -8,6 +8,9 @@ echo "Current directory:"
 pwd
 ls -la
 
+echo "Moving to Flutter app directory..."
+cd client/medical_devices_app
+
 # Verify Flutter files exist
 if [ ! -f "pubspec.yaml" ]; then
   echo "Error: Flutter app files not found in current directory"
@@ -31,4 +34,6 @@ flutter pub get
 echo "Building web..."
 flutter build web --release
 
-# No need to move files, they're already in the right place 
+echo "Moving build output to expected location..."
+mkdir -p ../../build
+cp -r build/web ../../build/ 

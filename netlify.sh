@@ -8,15 +8,12 @@ echo "Current directory:"
 pwd
 ls -la
 
-# Ensure we're in the right place and the directory exists
-if [ ! -d "client/medical_devices_app" ]; then
-  echo "Error: Flutter app directory not found"
-  ls -la client/
+# Verify Flutter files exist
+if [ ! -f "pubspec.yaml" ]; then
+  echo "Error: Flutter app files not found in current directory"
+  ls -la
   exit 1
 fi
-
-echo "Moving to Flutter app directory..."
-cd client/medical_devices_app || exit 1
 
 echo "Installing Flutter..."
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable "$HOME/flutter"
@@ -34,6 +31,4 @@ flutter pub get
 echo "Building web..."
 flutter build web --release
 
-echo "Moving build output to expected location..."
-mkdir -p ../../build
-cp -r build/web ../../build/ 
+# No need to move files, they're already in the right place 

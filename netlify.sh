@@ -8,6 +8,9 @@ echo "Current directory:"
 pwd
 ls -la
 
+echo "Moving to client directory..."
+cd client
+
 echo "Installing Flutter..."
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable "$HOME/flutter"
 export PATH="$PATH:$HOME/flutter/bin"
@@ -24,4 +27,6 @@ flutter pub get
 echo "Building web..."
 flutter build web --release
 
-# The build output will already be in the correct location (build/web) 
+echo "Moving build output to expected location..."
+mkdir -p ../build
+mv build/web ../build/ 

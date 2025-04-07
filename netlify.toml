@@ -1,5 +1,5 @@
 [build]
-  command = "./netlify.sh"
+  command = "/bin/bash netlify.sh"
   publish = "build/web"
 
 [[redirects]]

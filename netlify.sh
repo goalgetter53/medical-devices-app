@@ -24,8 +24,4 @@ flutter pub get
 echo "Building web..."
 flutter build web --release
 
-echo "Ensuring build/web directory exists..."
-mkdir -p build/web
-
-echo "Moving build output to expected location..."
-mv build/web ../build/web 
+# The build output will already be in the correct location (build/web) 

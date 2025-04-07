@@ -22,4 +22,4 @@ echo "Getting dependencies..."
 flutter pub get
 
 echo "Building web..."
-flutter build web --release --web-renderer html 
+flutter build web --release 

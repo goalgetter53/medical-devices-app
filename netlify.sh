@@ -1,4 +1,12 @@
 #!/bin/bash
+set -e
+
+# Print commands as they are executed
+set -x
+
+echo "Current directory:"
+pwd
+ls -la
 
 echo "Installing Flutter..."
 git clone https://github.com/flutter/flutter.git --depth 1 -b stable "$HOME/flutter"

@@ -32,10 +32,9 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
         
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: web-artifact
           path: build/web
           
   deploy:
